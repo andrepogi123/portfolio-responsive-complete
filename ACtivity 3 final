@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int main() {
+    float quiz1, quiz2, quiz3; 
+    float recitation1, recitation2, recitation3;
+    float longtest1, longtest2, longtest3;
+    float totalQuizPoints, totalRecitationPoints, totalLongExamPoints;
+    float averagePercentage;
+    
+    const float MAX_QUIZ_POINTS = 15.0 * 3; 
+    const float MAX_RECITATION_POINTS = 20.0 * 3; 
+    const float MAX_LONG_EXAM_POINTS = 100.0 * 3; 
+
+    printf("Enter points for Quiz 1: ");
+    scanf("%f", &quiz1);
+    printf("Enter points for Quiz 2: ");
+    scanf("%f", &quiz2);
+    printf("Enter points for Quiz 3: ");
+    scanf("%f", &quiz3);
+    
+    totalQuizPoints = quiz1 + quiz2 + quiz3;
+    printf("Total Points for all Quizzes: %.1f\n", totalQuizPoints);
+    
+    // Display Quiz Percentage
+    float averageQuizPercentage = (totalQuizPoints / MAX_QUIZ_POINTS) * 20;
+    printf("Quiz Percentage: %.1f%%\n", averageQuizPercentage);
+
+    printf("\nEnter points for Recitation 1: ");
+    scanf("%f", &recitation1);
+    printf("Enter points for Recitation 2: ");
+    scanf("%f", &recitation2);
+    printf("Enter points for Recitation 3: ");
+    scanf("%f", &recitation3);
+    
+    totalRecitationPoints = recitation1 + recitation2 + recitation3;
+    printf("Total Points for all Recitation: %.1f\n", totalRecitationPoints);
+    
+    // Display Recitation Percentage
+    float averageRecitationPercentage = (totalRecitationPoints / MAX_RECITATION_POINTS) * 20;
+    printf("Recitation Percentage: %.1f%%\n", averageRecitationPercentage);
+
+    printf("\nEnter points for Long Exam 1: ");
+    scanf("%f", &longtest1);
+    printf("Enter points for Long Exam 2: ");
+    scanf("%f", &longtest2);
+    printf("Enter points for Long Exam 3: ");
+    scanf("%f", &longtest3);
+    
+    totalLongExamPoints = longtest1 + longtest2 + longtest3;
+    printf("Total Points for all Long Exam: %.1f\n", totalLongExamPoints);
+    
+    // Display Long Exam Percentage
+    float averageLongExamPercentage = (totalLongExamPoints / MAX_LONG_EXAM_POINTS) * 60;
+    printf("Long Exam Percentage: %.1f%%\n", averageLongExamPercentage);
+
+    // Calculate overall average percentage
+    averagePercentage = averageQuizPercentage + averageRecitationPercentage + averageLongExamPercentage;
+
+    printf("\nTotal Average Percentage: %.1f%%\n", averagePercentage);
+    
+    if (averagePercentage >= 70) {
+        printf("Passed\n");
+    } else {
+        printf("Failed\n");
+    }
+    
+    return 0;
+}
